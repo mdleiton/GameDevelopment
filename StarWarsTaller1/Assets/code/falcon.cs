@@ -12,7 +12,6 @@ public class falcon : MonoBehaviour{
     void Start(){  
     }
 
-
     // Update is called once per frame
     void Update(){
         var x = Input.GetAxis("Horizontal"); 
@@ -23,9 +22,11 @@ public class falcon : MonoBehaviour{
 
     void OnCollisionEnter2D(Collision2D col){
         Debug.Log(col.gameObject.tag);
+        
         if(col.gameObject.tag == "meteoro"){
             Destroy(col.gameObject);
             Destroy(gameObject);
+            //col.gameObject.setActive(true);
 
         }
     }
@@ -34,4 +35,6 @@ public class falcon : MonoBehaviour{
         // Removes the rigidbody from the game object
         Destroy(GetComponent<Rigidbody2D>());
     }
+
+
 }

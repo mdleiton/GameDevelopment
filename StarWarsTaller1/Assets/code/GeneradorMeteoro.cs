@@ -13,7 +13,6 @@ public class GeneradorMeteoro : MonoBehaviour{
         Instantiate(prefabs, new Vector3(1, rng.Next(-1,6), -5), Quaternion.identity);
     }
 
-    // Update is called once per frame
     void Update(){
         count += 1;
         if(count==240){
