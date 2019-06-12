@@ -219,6 +219,8 @@ GameObject:
   - component: {fileID: 534690946}
   - component: {fileID: 534690947}
   - component: {fileID: 534690949}
+  - component: {fileID: 534690950}
+  - component: {fileID: 534690948}
   m_Layer: 0
   m_Name: millennium-falcon
   m_TagString: Untagged
@@ -302,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 534690947}
   speed: 3
+  bala: {fileID: 6534921222213820282, guid: 14a844e2c80f35d4a80d4cbc7d2e786e, type: 3}
+  trans: {fileID: 0}
 --- !u!50 &534690947
 Rigidbody2D:
   serializedVersion: 4
@@ -323,6 +327,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &534690948
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534690943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.2574337, y: -0.25146213}
+  serializedVersion: 2
+  m_Radius: 1.6829224
 --- !u!61 &534690949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -330,7 +350,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534690943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -349,6 +369,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.664955, y: 3.639491}
   m_EdgeRadius: 0
+--- !u!58 &534690950
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534690943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.019919, y: 0.39515343}
+  serializedVersion: 2
+  m_Radius: 1.2398719
 --- !u!1 &631472749
 GameObject:
   m_ObjectHideFlags: 0
