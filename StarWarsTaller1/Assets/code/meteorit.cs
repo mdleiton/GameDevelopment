@@ -9,8 +9,9 @@ public class meteorit : MonoBehaviour{
     public Transform trans;
     System.Random rng;
     int count;
-    public int vida = 1;
-
+    public int vida = 2;
+    public int dificultad = 0;
+    int count_frame = 0;
 
     private void Awake(){
         trans = this.transform;
@@ -24,7 +25,13 @@ public class meteorit : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-    	body.velocity = new Vector2(-3,0);
+        if(count_frame > 120){
+            dificultad+= 1;
+            count_frame = 0;
+        }
+        body.velocity = new Vector2(-3 - dificultad,0);
+        count_frame+=1;
+    	
     }
     
     void OnBecameInvisible() {
