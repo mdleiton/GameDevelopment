@@ -15,7 +15,7 @@ public class GeneradorMeteoro : MonoBehaviour{
 
     void Update(){
         count += 1;
-        if(count==240){
+        if(count==240){ // para que se genere uno nuevo cada 4 segundos.
         	Instantiate(prefabs, new Vector3(1, rng.Next(-1,6), -5), Quaternion.identity);
         	count= 0;
         }
