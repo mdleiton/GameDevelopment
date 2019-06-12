@@ -45,8 +45,9 @@ public class meteorit : MonoBehaviour{
 
     // cuando lo impacto un disparo
     void OnCollisionEnter2D(Collision2D col){   
-        Debug.Log("colision");    
-        if(col.gameObject.tag == "disparo"){
+        Debug.Log(col.gameObject.tag);    
+        if(col.gameObject.tag == "bala"){
+            Destroy(col.gameObject);
             if(vida > 0){
                 vida -= 1;
                 var scale = this.transform.localScale;
@@ -56,7 +57,6 @@ public class meteorit : MonoBehaviour{
             }else{
                 Destroy(gameObject);
             }
-            
             //col.gameObject.setActive(true);
         }
     }

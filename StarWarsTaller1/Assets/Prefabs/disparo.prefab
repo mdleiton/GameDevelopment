@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7300588850987121086}
   - component: {fileID: 4296561121227998410}
   - component: {fileID: 2269000245197408432}
+  - component: {fileID: -5671049427473933376}
   m_Layer: 0
   m_Name: disparo
-  m_TagString: Untagged
+  m_TagString: bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,3 +129,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.0761185, y: 0.78450245}
   m_EdgeRadius: 0
+--- !u!114 &-5671049427473933376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534921222213820282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19eef81f9955ed63fa2c33f69afb4475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 4296561121227998410}
+  trans: {fileID: 0}
