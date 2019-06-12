@@ -10,13 +10,13 @@ public class GeneradorMeteoro : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
-        Instantiate(prefabs, new Vector3(1, rng.Next(-1,6), -5), Quaternion.identity);
+        Instantiate(prefabs, new Vector3(9, rng.Next(-1,6), -5), Quaternion.identity);
     }
 
     void Update(){
         count += 1;
         if(count==240){ // para que se genere uno nuevo cada 4 segundos.
-        	Instantiate(prefabs, new Vector3(1, rng.Next(-1,6), -5), Quaternion.identity);
+        	Instantiate(prefabs, new Vector3(9, rng.Next(-1,6), -5), Quaternion.identity);
         	count= 0;
         }
     }
