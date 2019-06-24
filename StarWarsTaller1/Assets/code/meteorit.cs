@@ -9,7 +9,7 @@ public class meteorit : MonoBehaviour{
     public Transform trans;
     System.Random rng;
     int count;
-    public int vida = 2;
+    public int vida = 1;
     public int dificultad = 0;
     int count_frame = 0;
 
