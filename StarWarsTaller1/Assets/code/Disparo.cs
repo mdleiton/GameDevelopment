@@ -14,11 +14,12 @@ public class Disparo : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
+        //body.velocity = new Vector2(3,0);
     }
 
     // Update is called once per frame
     void Update(){
-    	body.velocity = new Vector2(3,0);
+    	
     }
     
     void OnBecameInvisible() {
