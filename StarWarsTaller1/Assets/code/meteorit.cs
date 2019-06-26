@@ -66,6 +66,9 @@ public class meteorit : MonoBehaviour{
             }
             //col.gameObject.setActive(true);
         }
+        if(col.gameObject.tag == "guerrero"){
+            Destroy(gameObject);
+        }
     }
 
 }
