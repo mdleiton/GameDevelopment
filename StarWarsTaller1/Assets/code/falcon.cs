@@ -30,7 +30,8 @@ public class falcon : MonoBehaviour{
         if(Input.GetKeyUp("space")){
             Debug.Log("presiono space");
             var position = body.position;
-            Instantiate(bala, new Vector3(position.x + 2.5f, position.y, -5), Quaternion.identity);
+            GameObject obj = (GameObject) Instantiate(bala, new Vector3(position.x + 2.5f, position.y, -5), Quaternion.identity);
+            obj.GetComponent<Rigidbody2D>().velocity = new Vector3(3, 0, 0);
         }
     }
 
