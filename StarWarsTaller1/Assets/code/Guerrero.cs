@@ -27,6 +27,13 @@ public class Guerrero : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+        try {
+            falcon player = GameObject.FindWithTag("Player").GetComponent(typeof(falcon)) as falcon; 
+        }catch (Exception e) {
+            anim.SetBool("final", true);
+            return;
+        }     
+
     	var v = body.velocity;
     	v.x = v_x;
     	body.velocity = v;
