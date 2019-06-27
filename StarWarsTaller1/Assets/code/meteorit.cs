@@ -51,10 +51,12 @@ public class meteorit : MonoBehaviour{
      }
 
     // cuando lo impacto un disparo
-    void OnCollisionEnter2D(Collision2D col){   
-        Debug.Log(col.gameObject.tag);    
+    void OnCollisionEnter2D(Collision2D col){     
         if(col.gameObject.tag == "bala"){
             Destroy(col.gameObject);
+            falcon player = GameObject.FindWithTag("Player").GetComponent(typeof(falcon)) as falcon;
+            player.puntaje++;
+            player.infoText.text = "SIGUE Así!";
             if(vida > 0){
                 vida -= 1;
                 var scale = this.transform.localScale;
@@ -62,6 +64,7 @@ public class meteorit : MonoBehaviour{
                 scale.x /= 2;
                 this.transform.localScale = scale;
             }else{
+                player.puntaje++;
                 Destroy(gameObject);
             }
             //col.gameObject.setActive(true);
@@ -70,6 +73,5 @@ public class meteorit : MonoBehaviour{
             Destroy(gameObject);
         }
     }
-
 }
 

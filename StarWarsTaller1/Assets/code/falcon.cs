@@ -13,51 +13,56 @@ public class falcon : MonoBehaviour{
     public Text vidaText;
     public Text infoText;
     public int puntaje = 0;
+    public int vidas = 2;
 
     private void Awake(){
         trans = this.transform;
     }
 
-
     // Start is called before the first frame update
     void Start(){  
-        
+        infoText.text = "Presione space : ";
     }
 
     // Update is called once per frame
     void Update(){
+        SetCountText();
         var x = Input.GetAxis("Horizontal"); 
         var y = Input.GetAxis("Vertical"); 
     	body.velocity =  new Vector2(speed*x,speed *y);
 
-
+        
         if(Input.GetKeyUp("space")){
-            Debug.Log("presiono space");
+            infoText.text = "";
             var position = body.position;
             GameObject obj = (GameObject) Instantiate(bala, new Vector3(position.x + 2.5f, position.y, -5), Quaternion.identity);
             obj.GetComponent<Rigidbody2D>().velocity = new Vector3(3, 0, 0);
         }
     }
 
-
     void OnCollisionEnter2D(Collision2D col){       
         if(col.gameObject.tag == "meteoro"){
-            puntaje++;
+            infoText.text = "Perdiste una vida!!!!!";
+            vidas--;
             Destroy(col.gameObject);
-            Destroy(gameObject);
-            //SetCountText();
-            //col.gameObject.setActive(true);
+            if(vidas<=0){
+
+                infoText.text = "Perdiste!!!!!";
+                Destroy(gameObject);
+            }
+            SetCountText();
         }
     }
 
     void DestroyComponent(){
-        // Removes the rigidbody from the game object
         Destroy(GetComponent<Rigidbody2D>());
     }
 
     void SetCountText (){
         puntajeText.text = "Puntaje: " + puntaje.ToString();
-        if (puntaje >= 20){
+        vidaText.text = "Vidas: " + vidas.ToString();
+
+        if (puntaje >= 10){
             infoText.text = "Ganaste!";
         }
     }
