@@ -52,7 +52,8 @@ public class Guerrero : MonoBehaviour{
         	var position = body.position;
         	GameObject obj = (GameObject) Instantiate(bala, new Vector3(position.x, position.y, -5), Quaternion.identity);
         	obj.GetComponent<Rigidbody2D>().velocity = new Vector3(v_x, +3, 0);
-        	if (v_x > 0.0){
+            obj.tag = "meteoro";
+            if (v_x > 0.0){
         		obj.transform.localScale = new Vector3(obj.transform.localScale.x, obj.transform.localScale.y, 1);
         	}else{
         		obj.transform.localScale = new Vector3(-1 *obj.transform.localScale.x, obj.transform.localScale.y, 1);

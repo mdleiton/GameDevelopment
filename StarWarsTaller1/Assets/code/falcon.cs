@@ -9,6 +9,10 @@ public class falcon : MonoBehaviour{
     public float speed = 10f;
     public GameObject bala;
     public Transform trans;
+    public Text puntajeText;
+    public Text vidaText;
+    public Text infoText;
+    public int puntaje = 0;
 
     private void Awake(){
         trans = this.transform;
@@ -38,8 +42,10 @@ public class falcon : MonoBehaviour{
 
     void OnCollisionEnter2D(Collision2D col){       
         if(col.gameObject.tag == "meteoro"){
+            puntaje++;
             Destroy(col.gameObject);
             Destroy(gameObject);
+            //SetCountText();
             //col.gameObject.setActive(true);
         }
     }
@@ -47,5 +53,12 @@ public class falcon : MonoBehaviour{
     void DestroyComponent(){
         // Removes the rigidbody from the game object
         Destroy(GetComponent<Rigidbody2D>());
+    }
+
+    void SetCountText (){
+        puntajeText.text = "Puntaje: " + puntaje.ToString();
+        if (puntaje >= 20){
+            infoText.text = "Ganaste!";
+        }
     }
 }
