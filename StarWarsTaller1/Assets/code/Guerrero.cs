@@ -27,19 +27,19 @@ public class Guerrero : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+        var v = body.velocity;
+        v.x = v_x;
+        body.velocity = v;
         try {
             falcon player = GameObject.FindWithTag("Player").GetComponent(typeof(falcon)) as falcon; 
         }catch (Exception e) {
+            v.x = 0.0f;
+            body.velocity = v;
             anim.SetBool("final", true);
             return;
         }     
-
-    	var v = body.velocity;
-    	v.x = v_x;
-    	body.velocity = v;
     	
     	if(count == 0){
-    		anim.SetBool("correr", true);
     		if(derecha){
     			transform.localScale = new Vector3(0.5f, 0.5f, 1);
 	    		derecha = false;
@@ -49,6 +49,9 @@ public class Guerrero : MonoBehaviour{
 	    		derecha = true;
 	    		v_x = -2.0f;
 	    	}
+            anim.SetBool("correr", true);
+            v.x = v_x;
+            body.velocity = v; 
     	}	
         count += 1;
         if(count==240){ // para que se genere uno nuevo cada 4 segundos.
@@ -67,8 +70,11 @@ public class Guerrero : MonoBehaviour{
         	}
         	v_x = 0.0f;
         	anim.SetBool("disparar", false);
-        	    
         }
+        if(count==300){ 
+            anim.SetBool("correr", true);
+        }
+        
         if(count==360){ // para que se genere uno nuevo cada 4 segundos.
         	count = 0;
 
