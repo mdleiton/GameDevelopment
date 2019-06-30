@@ -12,6 +12,8 @@ public class meteorit : MonoBehaviour{
     public int vida = 1;
     public int dificultad = 0;
     int count_frame = 0;
+    public GameObject particulas;
+
 
     private void Awake(){
         trans = this.transform;
@@ -53,6 +55,8 @@ public class meteorit : MonoBehaviour{
     // cuando lo impacto un disparo
     void OnCollisionEnter2D(Collision2D col){     
         if(col.gameObject.tag == "bala"){
+            var t = trans.position;
+            Instantiate(particulas, new Vector3(t.x, t.y,-10 ), Quaternion.identity);
             Destroy(col.gameObject);
             falcon player = GameObject.FindWithTag("Player").GetComponent(typeof(falcon)) as falcon;
             player.puntaje++;
