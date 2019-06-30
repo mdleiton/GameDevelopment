@@ -115,7 +115,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 3032874471797977871}
-  trans: {fileID: 0}
+  trans: {fileID: 3032874471797977856}
+  vida: 1
+  dificultad: 0
+  particulas: {fileID: 3063779038041216954, guid: 8f084a2cfd69f4d3aa21400b5787d9f8,
+    type: 3}
 --- !u!50 &3032874471797977871
 Rigidbody2D:
   serializedVersion: 4
